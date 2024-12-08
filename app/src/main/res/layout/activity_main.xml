@@ -1,0 +1,42 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center">
+
+    <!-- Imagen del avatar -->
+    <ImageView
+        android:id="@+id/avatarImage"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/default_avatar"
+        android:contentDescription="Avatar" />
+
+    <!-- Detalles del avatar -->
+    <TextView
+        android:id="@+id/avatarDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:text="@string/new_avatar"
+        android:layout_marginTop="16dp" />
+
+    <!-- Botón para iniciar -->
+    <Button
+        android:id="@+id/startDialogButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/start_button"
+        android:layout_marginTop="16dp" />
+
+    <!-- Botón para reiniciar -->
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reset_button"
+        android:layout_marginTop="16dp" />
+
+</LinearLayout>
