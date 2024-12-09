@@ -5,6 +5,15 @@
     android:orientation="vertical"
     android:padding="16dp">
 
+    <TextView
+        android:id="@+id/tituloTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Escriba su nombre:"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:gravity="left"
+        android:paddingBottom="8dp" />
+
     <!-- EditText para ingresar el nombre -->
     <EditText
         android:id="@+id/nombreEditText"

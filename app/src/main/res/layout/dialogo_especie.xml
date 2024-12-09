@@ -5,17 +5,26 @@
     android:orientation="vertical"
     android:padding="16dp">
 
+    <TextView
+        android:id="@+id/tituloTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Elige especie:"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:gravity="left"
+        android:paddingBottom="8dp" />
+
     <!-- Spinner para seleccionar la especie -->
     <Spinner
         android:id="@+id/especieSpinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <!-- Botón de aceptar -->
+    <!-- Botón de aceptar (continuar) -->
     <Button
         android:id="@+id/aceptarButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Aceptar" />
+        android:text="Continuar" />
 
 </LinearLayout>

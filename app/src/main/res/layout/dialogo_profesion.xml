@@ -1,27 +1,31 @@
-<!-- dialogo_profesion.xml -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="16dp">
 
+    <!-- Título del diálogo -->
+    <TextView
+        android:id="@+id/tituloTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Elige profesión:"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:gravity="left"
+        android:paddingBottom="8dp" />
+
+    <!-- Spinner para selección de la profesión -->
     <Spinner
         android:id="@+id/profesionSpinner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <!-- TextView para el mensaje de error -->
-    <TextView
-        android:id="@+id/errorTextView"
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/holo_red_light"
-        android:visibility="gone"
-        android:text="Por favor, selecciona una profesión." />
+        android:prompt="@string/profesion_prompt" />
 
+    <!-- Botón para aceptar -->
     <Button
         android:id="@+id/aceptarButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Aceptar" />
+        android:text="Aceptar"
+        android:layout_marginTop="16dp" />
 </LinearLayout>

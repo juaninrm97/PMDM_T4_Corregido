@@ -52,6 +52,7 @@
     <string name="power_speed">Velocidad</string>
 
     <string-array name="profesiones_array">
+        <item>Selecciona una profesión</item>
         <item>Arquero</item>
         <item>Guerrero</item>
         <item>Mago</item>
@@ -60,4 +61,12 @@
 
     <string name="profession_empty_error">Por favor, selecciona una profesión.</string>
 
+    <string name="select_profession_error">Selecciona una profesión</string>
+    <string name="select_gender_error">Selecciona un género</string>
+    <string name="profesion_prompt">Selecciona tu profesión</string>
+    <string-array name="especies_array">   <item>Selecciona una especie</item>
+        <item>Elfo</item>
+        <item>Enano</item>
+        <item>Hobbit</item>
+        <item>Humano</item></string-array>
 </resources>

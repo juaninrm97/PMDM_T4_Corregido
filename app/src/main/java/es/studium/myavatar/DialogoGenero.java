@@ -1,5 +1,6 @@
 package es.studium.myavatar;
 
+import android.widget.Toast;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.util.Log;
@@ -27,6 +28,8 @@ public class DialogoGenero extends DialogFragment {
 
         AlertDialog dialog = builder.create();
 
+
+
         btnAceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,7 +42,7 @@ public class DialogoGenero extends DialogFragment {
                     ((MainActivity) requireActivity()).mostrarDialogoNombre(generoSeleccionado);
                     dialog.dismiss();
                 } else {
-                    Log.e("DialogoGenero", "Ningún género seleccionado.");
+                    Toast.makeText(getActivity(), "Por favor, selecciona un género.", Toast.LENGTH_SHORT).show();
                 }
             }
         });

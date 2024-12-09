@@ -1,5 +1,6 @@
 package es.studium.myavatar;
 
+import android.widget.Toast;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -7,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.ArrayAdapter;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
@@ -32,7 +32,6 @@ public class DialogoProfesion extends DialogFragment {
 
         Spinner profesionSpinner = view.findViewById(R.id.profesionSpinner);
         Button aceptarButton = view.findViewById(R.id.aceptarButton);
-        TextView errorTextView = view.findViewById(R.id.errorTextView); // Referencia al TextView de error
 
         // Crear un ArrayAdapter para llenar el Spinner
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
@@ -47,23 +46,18 @@ public class DialogoProfesion extends DialogFragment {
         aceptarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Verificar si el Spinner tiene un valor seleccionado
-                if (profesionSpinner.getSelectedItem() != null) {
-                    String profesionSeleccionada = profesionSpinner.getSelectedItem().toString();
+                String profesionSeleccionada = profesionSpinner.getSelectedItem().toString();
 
-                    // Comprobar si la actividad es una instancia de MainActivity antes de hacer el cast
-                    if (getActivity() instanceof MainActivity) {
-                        // En el método donde necesitas acceder a avatar
-                        MainActivity mainActivity = (MainActivity) getActivity(); // Obtiene la referencia de MainActivity
-                        String genero = mainActivity.getAvatar().getGenero();  // Ahora puedes acceder al avatar a través del getter
+                // Validar que no se haya seleccionado la opción predeterminada
+                if (!profesionSeleccionada.equals("Selecciona una profesión")) {
+                    MainActivity mainActivity = (MainActivity) getActivity();
+                    String genero = mainActivity.getAvatar().getGenero();
 
-                        mainActivity.actualizarAvatar(nombre, genero, especie, profesionSeleccionada);
-                        dismiss();  // Cerrar el diálogo después de actualizar
-                    }
-
+                    mainActivity.actualizarAvatar(nombre, genero, especie, profesionSeleccionada);
+                    dismiss();  // Cerrar el diálogo
                 } else {
-                    // Mostrar el mensaje de error en el TextView
-                    errorTextView.setVisibility(View.VISIBLE); // Hacer visible el error
+                    // Mostrar un Toast si no se ha seleccionado una profesión válida
+                    Toast.makeText(getActivity(), "Por favor, selecciona una profesión válida.", Toast.LENGTH_SHORT).show();
                 }
             }
         });
